@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TypeReferences;
@@ -28,11 +29,10 @@ namespace LucasWarwick02.ScriptableObjectTables
         public List<SerializedScriptableObject> entries = new();
 
         /// <summary>
-        /// Finds an entry in the table by its GUID.
+        /// Finds an entry in the table by its GUID. If none are found, returns null.
         /// </summary>
         /// <param name="guid">Unique identifier of the entry to find.</param>
-        /// <exception cref="KeyNotFoundException">Thrown when the entry with the specified GUID is not found.</exception>
-        public T Find<T>(string guid, bool error = true) where T : SerializedScriptableObject
+        public T Find<T>(string guid) where T : SerializedScriptableObject
         {
             foreach (var entry in entries)
             {
@@ -41,12 +41,26 @@ namespace LucasWarwick02.ScriptableObjectTables
                     return entry as T;
                 }
             }
-            if (error)
+
+            return null;
+        }
+
+        /// <summary>
+        /// Queries the table for an entry that matches the provided predicate. If none are found, returns null.
+        /// </summary>
+        /// <param name="predicate">Condition to be met.</param>
+        /// <returns></returns>
+        public T Query<T>(Func<T, bool> predicate) where T : SerializedScriptableObject
+        {
+            foreach (var entry in entries)
             {
-                throw new KeyNotFoundException($"Entry with GUID '{guid}' not found in {name}");
+                if (entry is T typedEntry && predicate(typedEntry))
+                {
+                    return typedEntry;
+                }
             }
+
             return null;
         }
     }
-
 }
