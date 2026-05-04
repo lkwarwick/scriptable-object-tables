@@ -9,12 +9,12 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace LucasWarwick02.ScriptableObjectTables
+namespace ScriptableObjectTables
 {
     /// <summary>
     /// Wrapper around Unity's ScriptableObject to create a unique identifier that persists reliably.
     /// </summary>
-    [CreateAssetMenu(fileName = "New SSO", menuName = "Lucas's Unity Assets/Serialized Scriptable Object")]
+    [CreateAssetMenu(fileName = "New SSO", menuName = "Scriptable Object Tables/Serialized Scriptable Object")]
     public class SerializedScriptableObject : ScriptableObject, ISerializationCallbackReceiver
     {
         private static readonly Dictionary<SerializedScriptableObject, string> ObjectToString =
@@ -75,12 +75,12 @@ namespace LucasWarwick02.ScriptableObjectTables
 
         public void OnAfterDeserialize()
         {
-            ProcessRegistration(this);
+            // ProcessRegistration(this);
         }
 
         public void OnBeforeSerialize()
         {
-            ProcessRegistration(this);
+            // ProcessRegistration(this);
         }
 
         private static void ProcessRegistration(SerializedScriptableObject obj)

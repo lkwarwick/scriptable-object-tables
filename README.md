@@ -25,6 +25,22 @@ Managing large numbers of ScriptableObjects through the default Inspector can be
 
 ## Installation
 
+### Git
+
+Before adding the package via Git, you must add the following scoped registries:
+```json
+"scopedRegistries": [
+  {
+    "name": "package.openupm.com",
+    "url": "https://package.openupm.com",
+    "scopes": [
+      "com.solidalloy",
+      "org.nuget"
+    ]
+  }
+],
+```
+
 This package can be installed directly via the Unity Package Manager using the Git URL.
 
 1. Open your Unity project.
@@ -33,7 +49,7 @@ This package can be installed directly via the Unity Package Manager using the G
 4. Select **Add package from git URL...**.
 5. Enter the following URL:
    ```
-   https://github.com/lucaswarwick02/scriptable-object-tables
+   https://github.com/lucaswarwick02/scriptable-object-tables#v1.0.0
    ```
 
 ## Usage

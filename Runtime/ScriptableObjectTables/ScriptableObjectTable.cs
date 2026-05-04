@@ -6,7 +6,7 @@ using TypeReferences;
 using UnityEditor;
 #endif
 
-namespace LucasWarwick02.ScriptableObjectTables
+namespace ScriptableObjectTables
 {
     [CreateAssetMenu(fileName = "New Scriptable Object Table", menuName = "Scriptable Object Tables/Scriptable Object Table")]
     public class ScriptableObjectTable : ScriptableObject
@@ -18,7 +18,7 @@ namespace LucasWarwick02.ScriptableObjectTables
 #if UNITY_EDITOR
         void OnEnable()
         {
-            var icon = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.lucaswarwick02.scriptable-object-tables/Editor/Icons/icon.png");
+            var icon = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.lkwarwick.scriptable-object-tables/Editor/Icons/icon.png");
             EditorGUIUtility.SetIconForObject(this, icon);
         }
 #endif
@@ -61,6 +61,26 @@ namespace LucasWarwick02.ScriptableObjectTables
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Queries the table for all entries that match the provided predicate. If none are found, returns an empty list.
+        /// </summary>
+        /// <param name="predicate">Condition to be met.</param>
+        /// <returns></returns>
+        public List<T> QueryAll<T>(Func<T, bool> predicate) where T : SerializedScriptableObject
+        {
+            var results = new List<T>();
+
+            foreach (var entry in entries)
+            {
+                if (entry is T typedEntry && predicate(typedEntry))
+                {
+                    results.Add(typedEntry);
+                }
+            }
+
+            return results;
         }
     }
 }

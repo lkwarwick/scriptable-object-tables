@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using LucasWarwick02.ScriptableObjectTables;
+using ScriptableObjectTables;
 using UnityEditor;
 
 /// <summary>
