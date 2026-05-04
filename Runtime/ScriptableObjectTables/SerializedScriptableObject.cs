@@ -75,12 +75,12 @@ namespace ScriptableObjectTables
 
         public void OnAfterDeserialize()
         {
-            ProcessRegistration(this);
+            // ProcessRegistration(this);
         }
 
         public void OnBeforeSerialize()
         {
-            ProcessRegistration(this);
+            // ProcessRegistration(this);
         }
 
         private static void ProcessRegistration(SerializedScriptableObject obj)
