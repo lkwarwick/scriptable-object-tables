@@ -54,7 +54,7 @@ namespace ScriptableObjectTables
         {
             foreach (var entry in entries)
             {
-                if (predicate(typedEntry))
+                if (entry is T typedEntry && predicate(typedEntry))
                 {
                     return typedEntry;
                 }
@@ -74,7 +74,7 @@ namespace ScriptableObjectTables
 
             foreach (var entry in entries)
             {
-                if (predicate(typedEntry))
+                if (entry is T typedEntry && predicate(typedEntry))
                 {
                     results.Add(typedEntry);
                 }
