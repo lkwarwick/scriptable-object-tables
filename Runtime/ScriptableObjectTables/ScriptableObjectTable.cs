@@ -54,13 +54,33 @@ namespace ScriptableObjectTables
         {
             foreach (var entry in entries)
             {
-                if (entry is T typedEntry && predicate(typedEntry))
+                if (predicate(typedEntry))
                 {
                     return typedEntry;
                 }
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Queries the table for all entries that match the provided predicate. If none are found, returns an empty list.
+        /// </summary>
+        /// <param name="predicate">Condition to be met.</param>
+        /// <returns></returns>
+        public List<T> QueryAll<T>(Func<T, bool> predicate) where T : SerializedScriptableObject
+        {
+            var results = new List<T>();
+
+            foreach (var entry in entries)
+            {
+                if (predicate(typedEntry))
+                {
+                    results.Add(typedEntry);
+                }
+            }
+
+            return results;
         }
     }
 }
