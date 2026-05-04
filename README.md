@@ -49,7 +49,7 @@ This package can be installed directly via the Unity Package Manager using the G
 4. Select **Add package from git URL...**.
 5. Enter the following URL:
    ```
-   https://github.com/lkwarwick/scriptable-object-tables.git#v1.0.0
+   https://github.com/lkwarwick/scriptable-object-tables.git#v1.0.1
    ```
 
 ## Usage
