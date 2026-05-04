@@ -25,6 +25,22 @@ Managing large numbers of ScriptableObjects through the default Inspector can be
 
 ## Installation
 
+### Git
+
+Before adding the package via Git, you must add the following scoped registries:
+```json
+"scopedRegistries": [
+  {
+    "name": "package.openupm.com",
+    "url": "https://package.openupm.com",
+    "scopes": [
+      "com.solidalloy",
+      "org.nuget"
+    ]
+  }
+],
+```
+
 This package can be installed directly via the Unity Package Manager using the Git URL.
 
 1. Open your Unity project.
