@@ -9,18 +9,7 @@
     "scriptable object",
     "table"
   ],
-  "scopedRegistries": [
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.solidalloy",
-        "com.openupm",
-        "org.nuget"
-      ]
-    }
-  ],
   "dependencies": {
-    "com.solidalloy.type-references": "2.15.1"
+    "com.solidalloy.type-references": "https://github.com/SolidAlloy/ClassTypeReference-for-Unity.git#2.15.1"
   }
 }
