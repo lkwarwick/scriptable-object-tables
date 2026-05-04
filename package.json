@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "displayName": "Scriptable Object Tables",
   "description": "Manage groups of Unity's ScriptableObject within a single window.",
-  "keywords": [
-    "unity",
-    "package",
-    "scriptable object",
-    "table"
-  ],
+  "unity": "2022.3",
+  "unityRelease": "6f1",
   "scopedRegistries": [
     {
       "name": "package.openupm.com",
@@ -21,5 +17,15 @@
   ],
   "dependencies": {
     "com.solidalloy.type-references": "2.15.1"
+  },
+  "keywords": [
+    "unity",
+    "package",
+    "scriptable object",
+    "table"
+  ],
+  "author": {
+    "name": "lkwarwick",
+    "url": "https://github.com/lkwarwick"
   }
 }
