@@ -6,7 +6,7 @@ using TypeReferences;
 using UnityEditor;
 #endif
 
-namespace LucasWarwick02.ScriptableObjectTables
+namespace ScriptableObjectTables
 {
     [CreateAssetMenu(fileName = "New Scriptable Object Table", menuName = "Scriptable Object Tables/Scriptable Object Table")]
     public class ScriptableObjectTable : ScriptableObject
@@ -18,7 +18,7 @@ namespace LucasWarwick02.ScriptableObjectTables
 #if UNITY_EDITOR
         void OnEnable()
         {
-            var icon = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.lucaswarwick02.scriptable-object-tables/Editor/Icons/icon.png");
+            var icon = AssetDatabase.LoadAssetAtPath<Texture2D>("Packages/com.lkwarwick.scriptable-object-tables/Editor/Icons/icon.png");
             EditorGUIUtility.SetIconForObject(this, icon);
         }
 #endif
