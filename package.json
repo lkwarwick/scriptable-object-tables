@@ -1,5 +1,5 @@
 {
-  "name": "com.lucaswarwick02.scriptable-object-tables",
+  "name": "com.lkwarwick.scriptable-object-tables",
   "version": "0.1.0",
   "displayName": "Scriptable Object Tables",
   "description": "Manage groups of Unity's ScriptableObject within a single window.",
@@ -15,7 +15,6 @@
       "url": "https://package.openupm.com",
       "scopes": [
         "com.solidalloy",
-        "com.openupm",
         "org.nuget"
       ]
     }
